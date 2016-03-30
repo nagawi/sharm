@@ -1,3 +1,6 @@
 class Product < ActiveRecord::Base
-  mount_uploader :image, ImageProductUploader
+
+  belongs_to :product_category
+
+  mount_uploader :image_product, ImageProductUploader
 end

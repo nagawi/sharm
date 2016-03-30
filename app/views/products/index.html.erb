@@ -1,11 +1,11 @@
 <h1>Products#index</h1>
-<% @products.each do |f| %>
+<% @products.each do |product| %>
 
 <div>
  <div>
-   <p><%= image_tag f.image_product_url(:thumb) %></p>
-   <p><%= f.name %></p>
-   <p><%= f.note %></p>
+   <p><%= image_tag product.image_product_url(:thumb) %></p>
+   <p><%= product.name %></p>
+   <p><%= product.note %></p>
  </div>
 </div>
 <% end %>
