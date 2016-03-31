@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  get 'reviews/index'
+
+  get 'reviews/show'
+
+  get 'reviews/new'
+
+  post 'reviews', to: 'reviews#create'
 
   get 'products/index'
 
@@ -12,6 +17,10 @@ Rails.application.routes.draw do
   get 'home/index'
 
   root to: "home#index"
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

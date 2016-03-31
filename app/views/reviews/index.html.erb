@@ -1,0 +1,26 @@
+<h1>Reviews#index</h1>
+<%= link_to "レビュー作成", :action => "new" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>名前</th>
+      <th>タイトル</th>
+      <th>レビュー</th>
+      <th>評価</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews.each do |f| %>
+      <tr>
+        <td><%= f.product.name %></td>
+        <td><%= f.user.name %></td>
+        <td><%= f.title %></td>
+        <td><%= f.note %></td>
+        <td><%= f.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

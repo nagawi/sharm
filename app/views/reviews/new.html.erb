@@ -1,0 +1,27 @@
+<h1>Reviews#new</h1>
+<%= link_to "レビュー一覧", :action => :"index" %>
+<%= form_for(@review, url: {:controller => :reviews, :action => :create}) do |f| %>
+  <div>
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+  </div>
+  <div>
+    <%= f.label :product_id %>
+    <%= f.collection_select :product_id, Product.all, :id, :name %>
+  </div>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :note %>
+    <%= f.text_field :note %>
+  </div>
+  <div>
+    <%= f.label :value %>
+    <%= f.number_field :value %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
