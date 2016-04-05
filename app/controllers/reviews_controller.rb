@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @product = Product.find(params[:id])
   end
 
   def create

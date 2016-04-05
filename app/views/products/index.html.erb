@@ -6,6 +6,7 @@
    <p><%= image_tag product.image_product_url(:thumb) %></p>
    <p><%= product.name %></p>
    <p><%= product.note %></p>
+   <p><%= link_to 'レビューを書く', :controller => :reviews, :action => :new, :id => product.id %></p>
  </div>
 </div>
 <% end %>

@@ -4,4 +4,6 @@ class Product < ActiveRecord::Base
   has_many :reviews
 
   mount_uploader :image_product, ImageProductUploader
+
+  validates :product_id, presence: :true
 end
