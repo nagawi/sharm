@@ -6,7 +6,14 @@
    <p><%= image_tag product.image_product_url(:thumb) %></p>
    <p><%= product.name %></p>
    <p><%= product.note %></p>
-   <p><%= link_to 'レビューを書く', :controller => :reviews, :action => :new, :id => product.id %></p>
+   <% # 評価の平均値を表示 %>
+   <p><%= product.reviews.average(:value) %></p>
+   <% product.reviews.first(2).each do |f| %>
+     <p><%= f.user.name %></p>
+     <p><%= f.title %></p>
+     <p><%= f.value %></p>
+   <% end %>   
+<p><%= link_to 'レビューを書く', :controller => :reviews, :action => :new, :id => product.id %></p>
  </div>
 </div>
 <% end %>
