@@ -2,10 +2,12 @@
 <%= link_to "レビュー一覧", :action => :"index" %>
 <%= form_for(@review, url: {:controller => :reviews, :action => :create}) do |f| %>
   <div>
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :name %>
+    <% # 投稿者はログインユーザーで固定 %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= current_user.name %>
   </div>
   <div>
+    <% # 商品名を変えられないように固定 %>
     <%= f.hidden_field :product_id, :value => @product.id %>
     <%= @product.name %>
   </div>

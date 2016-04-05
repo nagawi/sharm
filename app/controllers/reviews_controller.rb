@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    # idを受け取る
     @product = Product.find(params[:id])
   end
 
