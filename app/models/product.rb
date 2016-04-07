@@ -5,5 +5,4 @@ class Product < ActiveRecord::Base
 
   mount_uploader :image_product, ImageProductUploader
 
-  validates :product_id, presence: :true
 end
