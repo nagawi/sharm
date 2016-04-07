@@ -6,7 +6,7 @@
    <p><%= image_tag product.image_product_url(:thumb) %></p>
    <p><%= product.name %></p>
    <p><%= product.note %></p>
-   <p><%= bar_chart product.reviews.group(:value).count %></p>
+   <p><%= bar_chart product.reviews.group(:value).count, width: "500px", height: "300px" %></p>
    <% # 評価の平均値を表示 %>
    <% product.reviews.first(5).each do |f| %>
      <p><%= f.user.name %></p>
