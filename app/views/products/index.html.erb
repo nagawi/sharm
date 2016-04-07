@@ -6,8 +6,8 @@
    <p><%= image_tag product.image_product_url(:thumb) %></p>
    <p><%= product.name %></p>
    <p><%= product.note %></p>
+   <p><%= bar_chart product.reviews.group(:value).count %></p>
    <% # 評価の平均値を表示 %>
-   <p><%= product.reviews.average(:value) %></p>
    <% product.reviews.first(5).each do |f| %>
      <p><%= f.user.name %></p>
      <p><%= f.title %></p>
@@ -17,3 +17,4 @@
  </div>
 </div>
 <% end %>
+<%= bar_chart Review.group(:value).count %>
