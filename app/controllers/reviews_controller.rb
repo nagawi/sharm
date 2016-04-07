@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    # 投稿者はcurrent_userで固定
+    @review = current_user.reviews.new(review_params)
     @review.save!
     redirect_to  :action => 'index'
   rescue => e

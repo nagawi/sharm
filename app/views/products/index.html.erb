@@ -8,7 +8,7 @@
    <p><%= product.note %></p>
    <% # 評価の平均値を表示 %>
    <p><%= product.reviews.average(:value) %></p>
-   <% product.reviews.first(2).each do |f| %>
+   <% product.reviews.first(5).each do |f| %>
      <p><%= f.user.name %></p>
      <p><%= f.title %></p>
      <p><%= f.value %></p>
