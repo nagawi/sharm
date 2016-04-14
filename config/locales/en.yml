@@ -18,6 +18,13 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
+views:
+   pagination:
+     first:    “&laquo;”
+     last:     “&raquo;”
+     previous: “&lsaquo;”
+     next:     “&rsaquo;”
+     truncate: “&hellip;”
 
 en:
   hello: "Hello world"

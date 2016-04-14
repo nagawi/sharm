@@ -3,6 +3,7 @@ Sharm 商品一覧
 <% end %>
 <h1>Products#index</h1>
 <%= link_to "レビュー一覧", :controller => :"reviews", :action => :"index" %>
+<br><%= page_entries_info @products %>
 <% @products.each do |product| %>
 <div>
  <div>
@@ -20,4 +21,5 @@ Sharm 商品一覧
  </div>
 </div>
 <% end %>
-<%= bar_chart Review.group(:value).count %>
+
+<%= paginate @products %>

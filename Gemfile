@@ -28,6 +28,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 # chartkick
 gem 'chartkick'
+# kaminari
+gem 'kaminari'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
